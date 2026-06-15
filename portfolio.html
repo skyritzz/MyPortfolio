@@ -114,6 +114,9 @@ nav .scroll-cue{
   text-align:right;
   max-width:46vw;
 }
+.project-panel--wide .project-text{
+  max-width:38vw;
+}
 .demo-hint{
   font-family:'JetBrains Mono',monospace;
   font-size:0.7rem;
@@ -138,6 +141,11 @@ nav .scroll-cue{
   transition:opacity 0.5s cubic-bezier(0.22,1,0.36,1), transform 0.5s cubic-bezier(0.22,1,0.36,1), box-shadow 0.5s ease;
   pointer-events:none;
   position:relative;
+}
+.demo-card--wide{
+  width:min(48vw, 640px);
+  aspect-ratio:16/10;
+  border-radius:16px;
 }
 .project-panel:hover .demo-card,
 .project-panel.touch-active .demo-card{
@@ -273,6 +281,10 @@ nav .scroll-cue{
     box-shadow:0 0 0 1px var(--glow), 0 20px 60px -15px var(--glow);
     align-self:center;
   }
+  .demo-card--wide{
+    width:min(85vw, 400px);
+    aspect-ratio:16/10;
+  }
   .demo-hint{display:none;}
 }
 @media (prefers-reduced-motion: reduce){
@@ -330,7 +342,7 @@ nav .scroll-cue{
   </div>
 </div>
 
-<div class="panel project-panel" id="panel-2">
+<div class="panel project-panel project-panel--wide" id="panel-2">
   <div class="project-text">
     <div class="eyebrow" style="color:var(--teal)">◐ orbit 02 / flowforge</div>
     <h2>A canvas<br>where logic<br>becomes visible.</h2>
@@ -340,7 +352,7 @@ nav .scroll-cue{
     </div>
     <div class="demo-hint">hover to preview ◐</div>
   </div>
-  <div class="demo-card" style="--glow:var(--teal)">
+  <div class="demo-card demo-card--wide" style="--glow:var(--teal)">
     <img class="demo-media" src="media/flowforge-demo.webp" alt="FlowForge pipeline builder demo">
   </div>
 </div>

@@ -107,6 +107,9 @@ nav .scroll-cue{
   justify-content:flex-end;
   gap:5vw;
 }
+.project-panel--wide{
+  gap:3vw;
+}
 .project-text{
   display:flex;
   flex-direction:column;
@@ -115,7 +118,10 @@ nav .scroll-cue{
   max-width:46vw;
 }
 .project-panel--wide .project-text{
-  max-width:38vw;
+  max-width:44vw;
+}
+.project-panel--wide h2{
+  font-size:clamp(2.4rem, 6.5vw, 5.5rem);
 }
 .demo-hint{
   font-family:'JetBrains Mono',monospace;
@@ -143,8 +149,8 @@ nav .scroll-cue{
   position:relative;
 }
 .demo-card--wide{
-  width:min(42vw, 600px);
-  max-height:60vh;
+  width:min(38vw, 540px);
+  max-height:55vh;
   aspect-ratio:1920/986;
   border-radius:16px;
 }

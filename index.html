@@ -289,16 +289,17 @@ nav .scroll-cue{
 }
 
 @media (max-width:800px){
-  .panel{padding:0 6vw;}
+  .panel{padding:0 5vw;}
   #panel-1, #panel-2, #panel-3{align-items:flex-start;text-align:left;}
   #panel-1 p, #panel-2 p, #panel-3 p{margin-left:0;}
   #panel-1 .tagrow, #panel-2 .tagrow, #panel-3 .tagrow{justify-content:flex-start;}
   .tech-credit{display:none;}
 
+  /* stack text on top, demo card below */
   .project-panel{
     flex-direction:column !important;
     justify-content:center;
-    gap:24px;
+    gap:0;
   }
   .project-text{
     align-items:flex-start;
@@ -306,20 +307,56 @@ nav .scroll-cue{
     max-width:100%;
   }
   .project-text .tagrow{justify-content:flex-start;}
-  .demo-card{
-    width:min(60vw, 240px);
-    aspect-ratio:410/910;
-    opacity:1;
-    transform:none;
-    box-shadow:0 0 0 1px var(--glow), 0 20px 60px -15px var(--glow);
-    align-self:center;
+
+  /* smaller heading on mobile */
+  .project-panel h2{
+    font-size:clamp(1.8rem, 8vw, 3rem);
+    line-height:1.1;
   }
+  .project-panel--wide h2{
+    font-size:clamp(1.8rem, 8vw, 3rem);
+  }
+  .project-panel p,
+  .project-panel--wide p{
+    font-size:0.9rem;
+    line-height:1.5;
+    margin-top:10px;
+  }
+  .project-panel .tagrow,
+  .project-panel--wide .tagrow{
+    margin-top:10px;
+  }
+
+  /* hide demo videos on mobile — desktop only */
+  .demo-card,
   .demo-card--wide{
-    width:min(85vw, 400px);
-    max-height:none;
-    aspect-ratio:1920/986;
+    display:none;
   }
   .demo-hint{display:none;}
+  .project-panel{
+    flex-direction:column !important;
+    justify-content:center;
+    gap:0;
+  }
+}
+
+/* smaller phones */
+@media (max-width:480px){
+  .project-panel{
+    padding-top:22vw;
+    gap:12px;
+  }
+  .project-panel h2,
+  .project-panel--wide h2{
+    font-size:clamp(1.6rem, 7.5vw, 2.4rem);
+  }
+  .demo-card{
+    width:min(42vw, 170px);
+  }
+  .demo-card--wide{
+    width:92vw;
+    max-height:24vh;
+  }
 }
 @media (prefers-reduced-motion: reduce){
   .panel{transition:none;}
